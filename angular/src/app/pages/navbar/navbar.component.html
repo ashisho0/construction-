@@ -1,0 +1,30 @@
+<header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2" id="navbar">
+
+
+    <div class="flex-1 flex .justify-center">
+        <a [routerLink]="['/']"
+            class="lg:p-3 py-3 px-0 block border-b-2 border-transparent .font-mono hover:border-indigo-400">
+            {{logo}}</a>
+    </div>
+
+    <label for="menu-toggle" class="cursor-pointer lg:hidden block">
+        <i class="fa fa-bars text-black" aria-hidden="true" id="menu-icon"></i>
+    </label>
+    <input type="checkbox" class="hidden" id="menu-toggle" />
+
+    <div class="hidden lg:flex lg:items-center  lg:w-auto w-full" id="menu">
+
+        <nav>
+            <ul class="lg:flex items-center justify-between text-base text-black pt-4 lg:pt-0">
+                <li class="font-mono" *ngFor="let menu of menus;let i=index">
+                    <a routerLink="{{menu.link}}"
+                        class="lg:p-3 py-3 px-0 block border-b-2 border-transparent .font-mono hover:border-indigo-400">
+                        {{menu.label}}</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+</header>
